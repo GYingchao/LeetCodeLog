@@ -16,7 +16,7 @@ public:
 	 	return length;
 	 }
 	*/
-	
+	/*  This solution is WA, dont know why
 	 int removeDuplicates(int A[], int n) {	
 	 	int length = n;
 	 	int offset = 0;
@@ -29,6 +29,22 @@ public:
 	 	}
 	 	return length;
 	 }
+	 */
+	 
+	 // Online Solution 1 : AC with O(n)
+	 int removeDuplicates(int A[], int n) {
+	 	// Check the extreme condition
+	 	if(n == 0) return 0;
+	 	
+		int length = 0;
+		for(int i=length+1; i<n; i++) {
+			if(A[length] != A[i]) {
+				length++;
+				A[length] = A[i];
+			}
+		}	 	
+		return ++length;
+	 }
 };
 
 #include<iostream>
@@ -37,8 +53,8 @@ using namespace std;
 int main() 
 {
 	Solution s;
-	int A[] = {-3,-1,0,0};
-	int n = 4;
+	int A[] = {};
+	int n = 0;
 	int le = s.removeDuplicates(A, n); 
 	cout <<  "Length after removal: " << le << endl;
 	for(int i=0; i<le; i++) 
