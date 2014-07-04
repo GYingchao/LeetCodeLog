@@ -1,3 +1,4 @@
+#include<algorithm>
 class Solution {
 public:
 	/* Time Exceed Solution
@@ -31,7 +32,7 @@ public:
 	 }
 	 */
 	 
-	 // Online Solution 1 : AC with O(n)
+	 /* // Online Solution 1 : AC with O(n)
 	 int removeDuplicates(int A[], int n) {
 	 	// Check the extreme condition
 	 	if(n == 0) return 0;
@@ -45,6 +46,16 @@ public:
 		}	 	
 		return ++length;
 	 }
+	 */
+	 
+	 /* // Online Solution 2 : AC with O(n)
+	 	// Using STL from <algorithm>
+	 	// Get to know unique(BeginIter, EndIter) and distance(BeginIter, EndIter)
+	 	// Knowing that the above two functions are implemented in linear time.
+	 int removeDuplicates(int A[], int n) {
+	 	return std::distance(A, std::unique(A, A+n));
+	 }
+	 */
 };
 
 #include<iostream>
@@ -53,8 +64,8 @@ using namespace std;
 int main() 
 {
 	Solution s;
-	int A[] = {};
-	int n = 0;
+	int A[] = {1, 1, 1, 7, 10};
+	int n = 5;
 	int le = s.removeDuplicates(A, n); 
 	cout <<  "Length after removal: " << le << endl;
 	for(int i=0; i<le; i++) 
