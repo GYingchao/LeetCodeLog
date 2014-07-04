@@ -1,0 +1,3 @@
+#ignore interior and execution files
+~*.*
+*.exe
