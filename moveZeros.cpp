@@ -8,7 +8,7 @@ using namespace std;
 
 class Solution {
 public:
-	
+	/*
     void moveZeroes(vector<int>& nums) {
         
         std::vector<int>:: iterator it = remove(nums.begin(), nums.end(), 0);
@@ -18,8 +18,18 @@ public:
         	nums.at(i) = 0;
         }
     }
+    */
+    
+    void moveZeroes(vector<int>& nums) {
+	    for (int lastNonZeroFoundAt = 0, cur = 0; cur < nums.size(); cur++) {
+	        if (nums[cur] != 0) {
+	            swap(nums[lastNonZeroFoundAt++], nums[cur]);
+	        }
+	    }
+}
 };
 
+/*
 int main() {
 	
 	int arr[] = {0, 3, 4, -1, 0 , 0, 9};
@@ -33,3 +43,4 @@ int main() {
 	}
 	
 }
+*/
