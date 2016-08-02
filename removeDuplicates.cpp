@@ -1,10 +1,12 @@
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
 class Solution {
 public:
+	/*
     int removeDuplicates(vector<int>& nums) {
     	
     	if(nums.empty()) {
@@ -22,8 +24,14 @@ public:
     	}
     	return p+1;
     }
+    */
+    int removeDuplicates(vector<int>& nums) {
+    	std::vector<int>::iterator it = unique(nums.begin(), nums.end());
+    	return distance(nums.begin(), it);
+    }
 };
 
+/*
 int main() {
 
 	int arr[] = {1, 3, 3, 4, 5, 5, 5, 9};
@@ -38,3 +46,4 @@ int main() {
 	}
 	return 0;
 }
+*/
