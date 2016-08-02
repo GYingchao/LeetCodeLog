@@ -1,11 +1,12 @@
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
 class Solution {
 public:
-	
+	/*
     int removeElement(vector<int>& nums, int val) {
         
         int p = 0;
@@ -20,6 +21,12 @@ public:
         }
         return p;
     }
+    */
+     int removeElement(vector<int>& nums, int val) {
+     	
+     	std::vector<int>::iterator it = remove(nums.begin(), nums.end(), val);
+     	return distance(nums.begin(), it);
+     }
 };
 
 int main() {
